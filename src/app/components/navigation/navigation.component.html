@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="nav flex-column navbar-nav" *ngIf="isLogged;" >
+    <a class="nav-link" (click)="redirectLibros()">Libros</a>
+    <a class="nav-link" (click)="redirectRevistas()">Revistas</a>
+  </nav>
+  <nav class="nav flex-column navbar-nav" *ngIf="isLogged;" >
+    <a class="nav-link" (click)="redirectComics()">Comics</a>
+    <a class="nav-link" (click)="redirectMusica()">Musica</a>
+  </nav>
+  <nav class="nav flex-column navbar-nav" *ngIf="isLogged;" >
+    <a class="nav-link" (click)="redirectVideos()">Videos</a>
+    <a class="nav-link" (click)="redirectPeliculas()">Peliculas</a>
+  </nav>
+  <div class="container">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home">Edren Editorial Renacer</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" *ngIf="isAdmin == 'admin'">
+            <a class="nav-link" routerLink="/autores">Autores</a>
+          </li>
+          <li class="nav-item" *ngIf="isAdmin == 'admin'">
+            <a class="nav-link" routerLink="/archiveros">Archiveros</a>
+          </li>
+          <li class="nav-item" *ngIf="isAdmin == 'admin'">
+            <a class="nav-link" routerLink="/images">Portadas</a>
+          </li>
+          <li class="nav-item" *ngIf="isAdmin == 'admin'">
+            <a class="nav-link" routerLink="/pdf">Archivos Pdf</a>
+          </li>
+          <li class="nav-item" *ngIf="isAdmin == 'admin'">
+            <a class="nav-link" routerLink="/users">Usuarios</a>
+          </li>
+          <li class="nav-item" *ngIf="!isLogged;">
+            <a class="nav-link" routerLink="/register">Registrate</a>
+          </li>
+          <li class="nav-item" *ngIf="!isLogged; else viewLogout">
+            <a class="nav-link" routerLink="/login">Inicia Session</a>
+          </li>
+            <li class="nav-item">
+              <ng-template #viewLogout>
+                 <a class="nav-link"  (click)=onLogout()>Salir</a>
+              </ng-template>
+             
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+
+</nav>

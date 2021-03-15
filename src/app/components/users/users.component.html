@@ -1,0 +1,36 @@
+
+<div class="table-button row">
+  
+    <button  class="btn btn-primary new"  (click)="onNew()">Add New</button>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" >Id</th>
+        <th scope="col" >Pais</th>
+        <th scope="col" >Idioma</th>
+        <th scope="col" >Email</th>
+        <th scope="col" >Usuario</th>
+        <th scope="col" >Role</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+          <td>{{usuario.id}}</td>
+          <td>{{usuario.Pais}}</td>
+          <td>{{usuario.Idioma}}</td>
+          <td>{{usuario.Email}}</td>
+          <td>{{usuario.Usuario}}</td>
+          <td>{{usuario.Role}}</td>
+          <td>
+            <div class="table-button row">
+              <button  class="btn btn-info btn-sm" (click)="onEdit(usuario.id)">Edit</button>
+              <button  class="btn btn-danger btn-sm" (click)="onDelete(usuario.id)">Delete</button>
+            </div>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+

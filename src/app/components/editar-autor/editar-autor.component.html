@@ -1,0 +1,43 @@
+<div class="editAutor-form">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="editAutorForm" (ngSubmit)="onEdit()">
+                <div class="mb-3">
+                 <label for="autor" class="form-label">Autor</label>
+                <input text="text" class="form-control" id="autor" formControlName="autor"
+                placeholder="Autor">
+                <label *ngIf="checkField('autor')">
+
+                </label>
+                </div>
+                <div class="mb-3">
+                    <label for="face" class="form-label">Facebook</label>
+                <input text="text" class="form-control" id="face" formControlName="face"
+                placeholder="Contacto Facebook">
+                <label *ngIf="checkField('face')">
+                    
+                </label>
+                </div>
+                <div class="mb-3">
+                    <label for="whatt" class="form-label">WhattSap</label>
+                <input text="text" class="form-control" id="whatt" formControlName="whatt"
+                placeholder="Contacto WhattSap">
+                <label *ngIf="checkField('whatt')">
+                    
+                </label>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email"
+                placeholder="Contacto Email">
+                <label *ngIf="checkField('email')">
+                    
+                </label>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

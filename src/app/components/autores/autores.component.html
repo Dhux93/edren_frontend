@@ -1,0 +1,32 @@
+<div class="table-button row">
+  
+    <button  class="btn btn-primary new"  (click)="onNew()">Add New</button>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" >Id</th>
+        <th scope="col" >Autor</th>
+        <th scope="col" >Facebook</th>
+        <th scope="col" >WhattSap</th>
+        <th scope="col" >Email</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let autor of autores">
+          <td>{{autor.id}}</td>
+          <td>{{autor.Autor}}</td>
+          <td>{{autor.Face }}</td>
+          <td>{{autor.Whatt}}</td>
+          <td>{{autor.Email}}</td>
+          <td>
+            <div class="table-button row">
+              <button  class="btn btn-info btn-sm" (click)="onEdit(autor.id)">Edit</button>
+              <button  class="btn btn-danger btn-sm" (click)="onDelete(autor.id)">Delete</button>
+            </div>
+          </td>
+      </tr>
+    </tbody>
+  </table>

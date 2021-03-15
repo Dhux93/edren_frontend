@@ -1,0 +1,22 @@
+<div class="text-center">
+    <h3>Videos</h3>
+</div>
+  <hr />
+  <hr />
+
+<div class="row">
+    <div class="col-md-4 p-4" *ngFor="let view of views">
+  
+      <div class="card text-center border-info">
+        <div class="car-header">
+          <h3 class="card-text">Titulo: {{view.Titulo}}</h3>
+          <p class="card-text">Genero: {{view.Genero}}</p>
+          <p class="card-text"> Categoria: {{view.Modulos}}</p>
+        </div>
+        <div class="card-body text-center">
+          <img src="{{view.Portada}}" class="img-card-top w-100" alt="">
+        </div>
+      </div>
+    </div>
+</div>
+

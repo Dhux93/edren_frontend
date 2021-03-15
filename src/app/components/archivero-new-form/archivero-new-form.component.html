@@ -1,0 +1,82 @@
+<div class="newArchivero-form">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="newArchiveroForm" (ngSubmit)="onRegister()">
+                <div class="mb-3">
+                    <label for="titulo" class="form-label">Titulo</label>
+                    <input text="text" class="form-control" id="titulo" formControlName="titulo"
+                        placeholder="Ingresa el Titulo">
+                        <label *ngIf="checkField('titulo')">
+                            
+                        </label>
+                </div>
+                
+                 <div class="mb-3">
+                    <label for="autores" class="form-label">Autores</label>
+                    <ng-multiselect-dropdown
+                    name="autores"
+                    
+                    forControlName="autores"
+                    [disabled]="disabled"
+                    [placeholder]="'Selecciona minimo un Autor'"
+                    [data]="autores"
+                    [settings]="dropdownSettings"
+                    (onSelect)="onItemSelect($event)"
+                    (onSelectAll)="onSelectAll($event)"
+                  >
+                  </ng-multiselect-dropdown>
+                    <!-- <label for="autores" class="form-label">Autor o Autores</label>
+                    <select class="form-control" formControlName="autores" id="autores" required>
+                        <option *ngFor="let autor of autores" value="{{autor.id}}">{{autor.Autor}}</option>
+                    </select>
+                    <label *ngIf="checkField('idAutor')">
+                    </label> -->
+                </div>
+
+                <div class="mb-3">
+                    <label for="genero" class="form-label">Genero</label>
+                    <input text="text" class="form-control" id="genero" formControlName="genero"
+                        placeholder="Ingresa el Genero">
+                        <label *ngIf="checkField('genero')">
+                            
+                        </label>
+                </div>
+
+                <div class="mb-3">
+                    <label for="precio" class="form-label">Precio</label>
+                    <input text="text" class="form-control" id="precio" formControlName="precio"
+                        placeholder="Ingresa el Precio (opcional)">
+                        <label *ngIf="checkField('precio')">
+                            
+                        </label>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="modulos" class="form-label">Modulos</label>
+                    <select class="form-control" formControlName="modulos" id="modulos" required>
+                        <option *ngFor="let modulo of modulos" value="{{modulo}}">{{modulo}}</option>
+                    </select>
+                    <label *ngIf="checkField('modulos')">
+                    </label>
+                </div>
+
+                
+                <div class="mb-3">
+                    <label for="roles" class="form-label">Roles</label>
+                    <select class="form-control" formControlName="roles" id="roles" required>
+                        <option *ngFor="let role of roles" value="{{role}}">{{role}}</option>
+                    </select>
+                    <label *ngIf="checkField('roles')">
+                    </label>
+                </div>
+
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+                </div>
+               
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="table-button row">
+  
+    <button  class="btn btn-primary new"  (click)="onNew()">Add New</button>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" >Id</th>
+        <th scope="col" >Titulo</th>
+        <th scope="col" >Autor</th>
+        <th scope="col" >Genero</th>
+        <th scope="col" >Precio</th>
+        <th scope="col" >Modulos</th>
+        <th scope="col" >Roles</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let archivero of archiveros">
+         <td>{{archivero.id}}</td>
+         <td>{{archivero.Titulo}}</td>
+         <td >{{archivero.Autores}}</td>
+         <td>{{archivero.Genero}}</td>
+         <td>{{archivero.Precio}}</td>
+         <td>{{archivero.Modulos}}</td>
+         <td>{{archivero.Roles}}</td>
+         <td>
+            <div class="table-button row">
+              <button  class="btn btn-info btn-sm" (click)="onEdit(archivero.id)">Edit</button>
+              <button  class="btn btn-danger btn-sm" (click)="onDelete(archivero.id)">Delete</button>
+            </div>
+          </td>
+      </tr>
+    </tbody>
+  </table>

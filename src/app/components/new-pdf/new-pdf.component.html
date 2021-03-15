@@ -1,0 +1,35 @@
+<div class="newPdf-form">
+    <div class="card">
+        <div class="card-body">
+            <form (submit)="upload(archId,encabezado)"  enctype="multipart/form-data">
+
+                
+                <div class="mb-3">
+                    <label for="archId" class="form-label">Archivero</label>
+                    <select class="form-control" id="archId" #archId required>
+                        <option *ngFor="let archivero of archiveros" value="{{archivero.id}}">{{archivero.Titulo}}</option>
+                    </select>
+                    <label *ngIf="checkField('idBook')">
+                    </label>
+                </div>
+
+
+                <div class="mb-3">
+                   <input type="file" #archivoInput (change)="onArchivoSelected($event)" class="from-control" id="archivo" >
+                </div>
+
+                <div class="mb-3">
+                    <label for="encabezado" class="form-label">Encabezado</label>
+                    <textarea cols="3" class="form-control" #encabezado id="encabezado" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Guardar</button>
+                </div>
+               
+            </form>
+
+        </div>
+    </div>
+</div>
+

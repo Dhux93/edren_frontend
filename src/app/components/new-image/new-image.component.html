@@ -1,0 +1,35 @@
+
+<div class="newImage-form">
+    <div class="card">
+        <div class="card-body">
+            <form (submit)="uploadImage(archId)"  enctype="multipart/form-data">
+
+                
+                 <div class="mb-3">
+                    <label for="archId" class="form-label">Archivero</label>
+                    <select class="form-control" id="archId" #archId required>
+                        <option *ngFor="let archivero of archiveros" value="{{archivero.id}}">{{archivero.Titulo}}</option>
+                    </select>
+                    <label *ngIf="checkField('archId')">
+                    </label>
+                </div>
+
+                <div class="mb-3">
+                   <input type="file" #portadaInput (change)="onPortadaSelected($event)" class="from-control" id="portada" >
+                </div>
+                <div class="mb-3">
+                    <img [src]="portadaSelected || 'assets/no-image.png'" class="img-fluid" alt="No Image" >
+                 </div>
+
+              
+
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Guardar</button>
+                </div>
+               
+            </form>
+
+        </div>
+    </div>
+</div>
